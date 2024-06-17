@@ -5,6 +5,7 @@ const hypersyncRpcUrl: string = "https://eth.hypersync.xyz";
 
 // The token addresses we want to get data for
 const tokenAddresses: string[] = [
+    "0xdAC17F958D2ee523a2206206994597C13D831ec7", // USDT
     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC
 ];
 
@@ -15,7 +16,7 @@ const eventHashes: string[] = [
 
 // The addresses we want to get data for
 const contractAddresses: string[] = [
-    "0x48c04ed5691981C42154C6167398f95e8f38a7fF",
+    "0xa2b8C4C45894907b93C48D90e3aC49bb781E6C13",
 ];
 
 function convertAddressesToTopics(addresses: string[]): string[] {
@@ -42,7 +43,7 @@ async function main() {
     const query = {
         // Start from block 0 and go to the end of the chain (we don't specify a toBlock).
         // @todo add iteration
-        fromBlock: 15000000,
+        fromBlock: 0,
         // The logs we want. We will also automatically get transactions and blocks relating to these logs (the query implicitly joins them).
         logs: [
             {
